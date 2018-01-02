@@ -1,0 +1,22 @@
+{% extends 'courses/base.html' %}
+{% block student %}
+    {% if con %}
+
+            <a class="navbar-brand" href="syllabus/">Contact</a>
+
+    {% endif %}
+{% endblock %}
+
+{% block links %}
+{% endblock %}
+{% block body %}
+{% if con %}
+
+    <p>Name : {{ con.user.username }}</p>
+    <p>Email id : {{ con.user.email }}  </p>
+    <p>Contact : {{ con.contact }}  </p>
+{% else %}
+    <h3>No contact details are available.</h3>
+{% endif %}
+
+{% endblock %}

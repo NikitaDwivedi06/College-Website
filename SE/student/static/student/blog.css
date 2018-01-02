@@ -1,0 +1,158 @@
+.page-header{
+    background-color: #000000;
+    font-family:'Cambria';
+    margin-top: 0;
+    padding: 20px 20px 20px 40px;
+}
+a,u{
+    text-decoration:none;
+}
+
+.page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
+    color: #ffffff;
+    font-size: 36pt;
+    text-decoration: none;
+}
+
+body {
+    font-size: 150%
+}
+
+h1 a:hover {
+    color: red;
+    text-decoration: none;
+}
+h2 a:hover {
+    color: red;
+    text-decoration: none;
+}
+h3 a:hover {
+    color: red;
+    text-decoration: none;
+}
+h1 a{
+    font-family: 'Cambria', cursive;
+    text-decoration: none;
+    color:#000000
+}
+h2 a
+{
+     font-family: 'Cambria', cursive;
+     text-decoration: none;
+     color:#008080
+}
+h3{
+     font-family: 'Cambria', cursive;
+     text-decoration: none;
+     color:#808080
+}
+.navbar-header{
+width:300%
+font-family: 'Cambria', cursive;
+}
+
+.navbar{
+    border-radius: 0;
+    background-color: #000000;
+}
+.btn-default {
+    color: #ffffff;
+    background-color: #000000;
+}
+.date {
+    color: #828282;
+}
+
+.save {
+    float: right;
+}
+
+.post-form textarea, .post-form input {
+    width: 100%;
+}
+
+.top-menu, .top-menu:hover, .top-menu:visited {
+    color: #ffffff;
+    float: right;
+    font-size: 26pt;
+
+}
+p {
+     font-family: arial;
+     font-size: 20px;
+    display: block;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+}
+html {
+    font-family: sans-serif;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    box-sizing: border-box;
+}
+div.table-title {
+   display: block;
+  margin: auto;
+  max-width: 600px;
+  padding:5px;
+  width: 100%;
+}
+
+.table-title h3 {
+   color: #fafafa;
+   font-size: 30px;
+   font-weight: 400;
+   font-style:normal;
+   font-family: "Roboto", helvetica, arial, sans-serif;
+   text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+   text-transform:uppercase;
+}
+
+
+table {
+color:#fff;
+font-family:Helvetica,Arial,sans-serif;
+border-collapse: collapse;
+padding:0 3px;
+border-radius: 5px;
+margin: 25px auto;
+}
+
+td, th {
+height:30px;
+transition:all 1.5s;
+text-align:center;
+padding: 5px 40px;
+border: 2px solid #000;
+width: 100px;
+}
+
+th {
+background:#000;
+font-weight:700;
+}
+
+tr td {
+background:#fff;
+color:#000;
+}
+
+tr td:hover {
+background:#666;
+color:#FFF;
+font-weight:bold;
+}
+.table-title  {
+   color: black;
+   font-size: 20px;
+   font-weight: 400;
+   font-style:normal;
+   font-family: "Roboto", helvetica, arial, sans-serif;
+   text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+   text-transform:uppercase;
+}
+
+
+

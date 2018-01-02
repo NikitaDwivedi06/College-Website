@@ -1,0 +1,80 @@
+
+{% extends 'courses/base.html' %}
+{% block title %}Course Details{% endblock %}
+
+{% block student %}
+    {% if courses %}
+    <a class="navbar-brand" href="syllabus/">{{ courses.cname }}&nbsp; {{ courses.year }}</a>
+    {% endif %}
+{% endblock %}
+
+{% block links %}
+
+<li>
+    <a href='update'>
+        <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>&nbsp; Update Course Details
+    </a>
+</li>
+<li>
+    <a href='delete'>
+        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>&nbsp; Delete Course
+    </a>
+</li>
+
+{% endblock %}
+
+{% block body %}
+
+
+
+    <a href="syllabus/">Syllabus</a></br>
+    <a href="schedule/">Lecture Details and notes</a></br>
+    <a href="books/">Reference Books</a></br>
+    <a href="assignments/">Assignments</a></br>
+    <a href="papers/">Question Papers</a></br>
+    <a href="contact/">Contact details</a></br>
+    {% if user.is_authenticated %}
+    <a href="evalasg/">Evaluate Assignment</a>
+    {% endif %}
+
+
+
+{% endblock %}
+
+
+
+
+<!-- side nav
+<div class="container">
+<div class="row">
+  <div class="col-sm-3">
+    <div class="sidebar-nav le">
+      <div class="navbar navbar-inverse left" role="navigation">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <span class="visible-xs navbar-brand">Sidebar menu</span>
+        </div>
+        <div class="navbar-collapse collapse sidebar-navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class=""><a href="syllabus">Syllabus</a></li>
+            <li><a href="schedule">Lecture Details and notes</a></li>
+            <li><a href="books/">Reference Books</a></li>
+            <li><a href="assignments/">Assignments</a></li>
+            <li><a href="papers/">Question Papers</a></li>
+            <li><a href="contact/">Contact details</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-9">
+
+  </div>
+</div>
+</div>
+-->

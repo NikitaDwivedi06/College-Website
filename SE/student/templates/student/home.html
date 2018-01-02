@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="{% static 'student/style.css' %}"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+</head>
+<body style="background-image:url('/static/student/images/cse8.jpg'); opacity:0.99; background-repeat:no-repeat;background-size : cover" >
+
+<font face="Cambria" color="white" size="80px"><p style="margin-top=12cm;left: 0;
+    line-height: 200px;
+    margin: auto;
+    margin-top: -100px;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-size:40px" align="center">Welcome to Student Portal</p></font>
+<!--<center><font color="white" size="35"><a href="{% url 'student:loginform' %}" style="text-decoration:none"  >Login</a></font></center>
+-->
+<!--<a href="{% url 'student:loginform' %}" style="text-decoration:none;"  >Login</a>-->
+
+<div class="container" id="login">
+                    <a href="{% url 'student:loginform' %}" class="btn btn-default btn-lg pull-right" role="button">
+                        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp; Login
+                    </a>
+</div>
+
+
+
+</body>
+</html>
+
+
+
+

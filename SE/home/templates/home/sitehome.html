@@ -1,0 +1,66 @@
+<br>
+>
+<head>
+<style type="text/css">
+</style>
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+{% load static %}
+<body>
+
+<div class="jumbotron container-fluid" style="background-color:black">
+
+<p style="font-style:Cambria;color:white;font-size:40px" >Department of Computer Science and Engineering</p>
+
+</div>
+<div id="theCarousel" class="carousel slide" data-ride="carousel" >
+<ol class="carousel-indicators">
+<li data-target="#theCarousel" data-slide-to="0" class="active"></li>
+<li data-target="#theCarousel" data-slide-to="1" ></li>
+<li data-target="#theCarousel" data-slide-to="2"></li>
+</ol>
+    <div class="carousel-inner" >
+	<div class="item active">
+	<img src="{% static 'home/images/cse1.jpg' %}" style="width:1000px; height:450px;margin-left:7cm" >
+	<div class="slide1"></div>
+	<div class="carousel-caption">
+	 <h1 style="color:black;">Mission and Vision</h1>
+	</div>
+
+	</div>
+        <div class="item">
+        <img src="{% static 'home/images/cse2.jpg' %}" style="width:1000px; height:450px;margin-left:7cm">
+	<div class="slide2"></div>
+	</div>
+        <div class="item">
+        <img src="{% static 'home/images/cse3.jpg' %}" style="width:1000px; height:450px;margin-left:7cm">
+	<div class="slide3"></div>
+	</div>
+   </div>
+</div>
+
+<a class="left carousel-control" href="#theCarousel" data-slide="prev">
+<span class="glyphicon glyphicon-chevron-left"></span>
+<a class="right carousel-control" href="#theCarousel" data-slide="next">
+<span class="glyphicon glyphicon-chevron-right"></span>
+<!--<div class="btn-group">
+  <button type="button" class="btn btn-primary" >Student Portal</button>
+  <button type="button" class="btn btn-primary">Faculty Portal</button>
+</div>-->
+<!--<font size="20px" color=black><a href="{% url 'student:home' %}" style="">Student Portal</a></font>
+<br>
+<font size="20px" color=black><a href="{% url 'home' %}">Faculty Portal</a></font>-->
+	<div class="jumbotron">
+  <center><h1><a href="{% url 'student:home' %}" style="text-decoration:none">Student Portal</a></h1>
+  <p>An exclusive portal for students</p></center>
+</div>
+
+<div class="jumbotron">
+  <center><h1><a href="{% url 'home' %}" style="text-decoration:none">Faculty Portal</a></h1>
+  <p>An exclusive portal for Faculty</p></center>
+</div>
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</html>

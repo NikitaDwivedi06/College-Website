@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% load staticfiles %}
+<link rel="stylesheet" type='text/css' href="{% static 'student/answer.css' %}">
+
+</head>
+<body>
+<h1 font="Verdana" align="center" >Your Answer</h1>
+<form enctype="multipart/form-data" class="form-style-9" action="{%url 'student:extract_answer' %}" method="post">{% csrf_token %}
+<ul>
+<li>
+    <input type="text" name="input-name"  class="field-style field-split align-left" placeholder="Name" />
+    <input type="email" name="input-email"  class="field-style field-split align-right" placeholder="Email" />
+
+</li>
+<li>
+    <input type="text" name="input-phone"  class="field-style field-split align-left" placeholder="Phone" />
+    <input type="text" name="input-id" size="20" class="field-style field-split align-right" placeholder="College Identification number" />
+    <input type="hidden" name="queno" value={{que}}>
+</li>
+<li>
+<input type="text" name="input-subject"  class="field-style field-full align-none" placeholder="Subject" />
+</li>
+<li>
+<textarea name="input-message" class="field-style" placeholder="Message"></textarea>
+    <input type="file" name="fileupload"  >
+</li>
+<li>
+<input type="submit" value="Post answer" />
+</li>
+</ul>
+</form>
+</body>
+</html>

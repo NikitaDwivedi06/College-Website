@@ -1,0 +1,18 @@
+{% extends 'courses/base.html' %}
+
+{% block body %}
+
+
+    {% if courses %}
+        <ul>
+            {% for course in courses %}
+            <li><a href="/courses/{{ course.id }}/">{{ course.cname }}</a></li>
+            {% endfor %}
+        </ul>
+        </br>
+        </br>
+
+    {% else %}
+        <h3>You don't have any courses added till now.</h3>
+    {% endif %}
+{% endblock %}

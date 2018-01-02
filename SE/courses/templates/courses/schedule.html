@@ -1,0 +1,81 @@
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+table#t01 {
+    width: 100%;
+
+}
+
+</style>
+{% extends 'courses/base.html' %}
+{% block student %}
+    {% if details %}
+
+            <a class="navbar-brand" href="syllabus/">{{ details.0.course.cname }}&nbsp; {{ details.0.course.year }}</a>
+
+    {% endif %}
+{% endblock %}
+{% block links %}
+    <li>
+        <a href="add/">
+            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp; Add Lecture Details
+        </a>
+    </li>
+
+{% endblock %}
+
+{% block body %}
+{% if details %}
+    <table style="width:100%">
+    <tr>
+        <th>Date</th>
+        <th>Lecture Topic</th>
+        <th>Notes</th>
+        {% if user.is_authenticated %}
+        <th>Update</th>
+        <th>Delete</th>
+        {% endif %}
+    </tr>
+    {% for detail in details %}
+        <tr>
+            <td>{{ detail.date }}</td>
+            <td>{{ detail.topic }}</td>
+            {% if detail.notes %}
+                <div class="container">
+                    <td>
+                        <a href="{{ detail.notes.url }}"target="_blank" class="btn btn-default btn-xs" role="button">
+                             <span class="glyphicon glyphicon-save" aria-hidden="true"></span>&nbsp;Notes
+                        </a>
+                    </td>
+                </div>
+            {% else %}
+            <td></td>
+            {% endif %}
+            {% if user.is_authenticated %}
+            <div class="container">
+                   <td>
+                       <a href="{{ detail.pk }}/update/" class="btn btn-default btn-xs" role="button">
+                        <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>&nbsp; Update
+                         </a>
+                   </td>
+                    <td>
+                        <a href="{{ detail.pk }}/delete/" class="btn btn-default btn-xs" role="button">
+                        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>&nbsp; Delete</a>
+                    </td>
+            </div>
+            {% endif %}
+
+        </tr>
+    {% endfor %}
+    </table>
+{% else %}
+    <h3>No course details added</h3>
+{% endif %}
+
+{% endblock %}

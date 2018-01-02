@@ -1,0 +1,25 @@
+{% load staticfiles %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <link rel="stylesheet" href="{% static 'student/style.css' %}">
+    <title>Login</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{% static 'student/blog.css' %}">
+    <link rel="stylesheet" type='text/css' href="{% static 'student/question.css' %}">
+</head>
+<body>
+
+
+<h1 font="Verdana" align="center" >Login to your account</h1>
+<form class="form-style-9" method="POST" action="{%url 'student:login'%}">  {% csrf_token %}
+	<ul>
+   <li> <input type="text" name="user" class="field-style field-split align-left" size="20" placeholder="Username">
+					<input type="password" name="pass" class="field-style field-split align-right" size="20" placeholder="Password"> </li>
+</ul>					<input type="submit" name="login"  value="Login">
+</form>
+</body>
+</html>

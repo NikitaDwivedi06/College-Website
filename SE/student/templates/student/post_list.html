@@ -1,0 +1,109 @@
+{% load staticfiles %}
+<html>
+    <head>
+        <title>Student Discussion Forum</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{% static 'student/blog.css' %}">
+
+    </head>
+    <body >
+        <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <!--Header-->
+       <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topNavBar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{% url 'student:post_list' %}" style="font-size:40px;margin-top:0.5cm;margin-bottom:0.5cm; color:white">Student Discussion Forum</a>
+        </div>
+        <div class="collapse navbar-collapse" id="topNavBar">
+            <ul class="nav navbar-nav">
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+            {% block links %}
+                <li>
+                    <a href="{% url 'student:post_question' %}" style="font-size:17px; color:white;margin-top:1cm">
+                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp;Ask a question
+                    </a>
+                </li>
+            {% endblock %}
+                <li>
+                    <a href="#" style="font-size:17px; color:white;margin-top:1cm">
+                        <span class="glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp; Logout
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</nav>
+        <div class="content container">
+            <div class="row">
+                <div class="col-md-10">
+                {% for post in posts %}
+                    <div class="post" >
+                        <h1 style="margin-left:6cm"><a href="{{post.id}}/">{{ post.title }}</a></h1>
+                        <p style="margin-left:6cm">{{ post.text|linebreaksbr }}</p>
+                        <div class="date" style="margin-left:6cm">
+                            {{ post.published_date }}
+                        </div>
+                            <a href="#" onclick="ans('{{post.id}}')" style="margin-left:6cm">View Answers</a>
+
+                        <div class="answer" id={{post.id}}>
+                            {% for answer in answers %}
+                                {% if answer.question == post  %}
+                                            <h2 style="margin-left:10cm"><a href="/blog/{{post.id}}/{{answer.id}}/">{{ answer.title }}</a></h2>
+                                            <p style="margin-left:10cm">{{ answer.text|linebreaksbr }}</p>
+                                            {% if answer.photo %}
+                                            <img src ="{{ answer.photo.url }}" style="margin-left:10cm" class="img-responsive" width="50%" height="50%">
+                                            {% endif%}
+                                            <div class="date" style="margin-left:10cm">
+                                            {{ answer.published_date }}
+                                            </div>
+                                            <a href="#" onclick="comment('{{answer.id}}')" style="margin-left:10cm">View Comments</a>
+                                            <div class="comment" id={{answer.id}} >
+                                                {%for comment in comments%}
+                                                     {%if comment.answer == answer  %}
+                                                         <h3 style="margin-left:12cm">{{ comment.title }}</h3>
+                                                             <p style="margin-left:12cm">{{ comment.text|linebreaksbr }}</p>
+                                                             <div class="date" style="margin-left:12cm">
+                                                             {{ comment.published_date }}
+                                                             </div>
+                                                     {% endif %}
+                                                {%endfor%}
+                                            </div>
+                                {%endif%}
+                            {%endfor%}
+                        </div>
+                    </div>
+                {% endfor %}
+                </div>
+
+            </div>
+        </div>
+
+    <script>
+function ans(variable) {
+    var x = document.getElementById(variable);
+    if (x.style.display === 'none') {
+        x.style.display = 'block';
+    } else {
+        x.style.display = 'none';
+    }
+}
+function comment(variable) {
+    var x = document.getElementById(variable);
+    if (x.style.display === 'none') {
+        x.style.display = 'block';
+    } else {
+        x.style.display = 'none';
+    }
+}
+</script>
+    </body>
+</html>
+

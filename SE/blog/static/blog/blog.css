@@ -1,0 +1,79 @@
+.page-header{
+    background-color: #000000;
+    font-family:'Cambria';
+    margin-top: 0;
+    padding: 20px 20px 20px 40px;
+}
+a,u{
+    text-decoration:none;
+}
+
+.page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
+    color: #ffffff;
+    font-size: 36pt;
+    text-decoration: none;
+}
+
+body {
+    font-size: 150%
+}
+
+h1 a:hover {
+    color: red;
+    text-decoration: none;
+}
+h2 a:hover {
+    color: red;
+    text-decoration: none;
+}
+h3 a:hover {
+    color: red;
+    text-decoration: none;
+}
+h1 a{
+    font-family: 'Cambria', cursive;
+    text-decoration: none;
+    color:#000000
+}
+h2 a
+{
+     font-family: 'Cambria', cursive;
+     text-decoration: none;
+     color:#008080
+}
+h3{
+     font-family: 'Cambria', cursive;
+     text-decoration: none;
+     color:#808080
+}
+.navbar-header{
+width:300%;
+font-family: 'Cambria', cursive;
+}
+
+.navbar{
+    border-radius: 0;
+    background-color: #000000;
+}
+.btn-default {
+    color: #ffffff;
+    background-color: #000000;
+}
+.date {
+    color: #828282;
+}
+
+.save {
+    float: right;
+}
+
+.post-form textarea, .post-form input {
+    width: 100%;
+}
+
+.top-menu, .top-menu:hover, .top-menu:visited {
+    color: #ffffff;
+    float: right;
+    font-size: 26pt;
+
+}

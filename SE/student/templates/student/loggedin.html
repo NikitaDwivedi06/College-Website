@@ -1,0 +1,66 @@
+{% load staticfiles %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{% static 'student/blog.css' %}">
+</head>
+<body>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <!--Header-->
+       <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topNavBar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#" style="font-size:40px;margin-top:0.5cm;margin-bottom:0.5cm; color:white">Student Portal</a>
+        </div>
+        <div class="collapse navbar-collapse" id="topNavBar">
+            <ul class="nav navbar-nav">
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+
+                <li>
+                    <a href="{% url 'student:home' %}" style="font-size:17px; color:white;margin-top:1cm">
+                        <span class="glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp; Logout
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</nav>
+ <p >
+ <div class="table-title">Name: {{student.name}}<br>
+ Roll Number: {{student.rollno}}<br>
+ Contact: {{student.email}}<br><br>
+ Registered Courses</div>
+     <table >
+      <thead><tr><th >Course</th><th >Assignment</th></tr></thead>
+         <tbody>
+     <tr>{% for course in student.courses.all %}
+     <td >{{course.name}}</td><br>
+     <td ><form action="{% url 'student:add-assgn' %}" method="post"> {% csrf_token %}
+     <input type="submit" value="Upload">
+         <input type="hidden" name="course-name" value={{course.code}}>
+     <input type="hidden" name="student-name" value={{student.sid}}>
+
+     </form>
+     </td>
+         </tr>
+     {% endfor %}
+      </tbody>
+      </table>
+
+ </p>
+
+
+<a href="{% url 'blog:post_list' %}">Go to Discussion Forum</a>
+</body>
+</html>

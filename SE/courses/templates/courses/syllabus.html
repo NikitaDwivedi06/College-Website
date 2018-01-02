@@ -1,0 +1,43 @@
+{% extends 'courses/base.html' %}
+
+
+
+{% block links %}
+
+    <li>
+    <a href="add/">
+        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp; Add new topic in syllabus
+    </a>
+</li>
+{% endblock %}
+
+{% block student %}
+    {% if syl %}
+
+            <a class="navbar-brand" href="syllabus/">{{ syl.0.course.cname }}&nbsp; {{ syl.0.course.year }}</a>
+
+    {% endif %}
+{% endblock %}
+
+{% block body %}
+{% if syl %}
+    <ul>
+        {% for sy in syl %}
+        <li>{{ sy.topics }}</li> &nbsp;
+            {% if user.is_authenticated %}
+            <div class="container">
+                    <a href="{{ sy.pk }}/update/" class="btn btn-default btn-xs" role="button">
+                        <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>&nbsp; Update
+                    </a>
+                    <a href="{{ sy.pk }}/delete/" class="btn btn-default btn-xs" role="button">
+                        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>&nbsp; Delete</a>
+            </div>
+            {% endif %}
+
+        {% endfor %}
+    </ul>
+{% else %}
+    <h3>You haven't added syllabus till now.</h3>
+{% endif %}
+
+{% endblock %}
